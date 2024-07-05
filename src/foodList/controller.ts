@@ -1,4 +1,4 @@
-import { Foodlist } from "./schema";
+import { Foodlist } from "./schema.js";
 
 export const createFoodlist = async (req, res) => {
   try {

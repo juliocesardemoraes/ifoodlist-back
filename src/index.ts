@@ -4,7 +4,7 @@ import {
   createFoodlist,
   getFoodlist,
   updateFoodlist,
-} from "./foodList/controller";
+} from "./foodList/controller.js";
 
 // If you want to connect to mongo uncomment the two lines below
 // and add the connection string to the .env file
