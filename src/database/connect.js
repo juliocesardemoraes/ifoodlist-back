@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 // Database connection URL
 const dbUrl = process.env.DB_KEY;
 
