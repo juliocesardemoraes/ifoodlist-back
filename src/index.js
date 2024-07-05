@@ -5,11 +5,16 @@ import {
   getFoodlist,
   updateFoodlist,
 } from "./foodList/controller.js";
+import { connectToMongo } from "./database/connect.js";
+import {
+  createRestaurant,
+  getRestaurant,
+  updateRestaurant,
+} from "./restaurant/controller.js";
 
 // If you want to connect to mongo uncomment the two lines below
 // and add the connection string to the .env file
 
-import { connectToMongo } from "./database/connect.js";
 connectToMongo();
 
 const app = express();
@@ -20,14 +25,13 @@ app.use(
 );
 app.use(express.json());
 
-// Create a new foodlist
 app.post("/foodlist", createFoodlist);
-
-// Get all foodlists
 app.get("/foodlist", getFoodlist);
-
-// Update a foodlist (assuming :id is the foodlist ID)
 app.put("/foodlist", updateFoodlist);
+
+app.post("/restaurant", createRestaurant);
+app.get("/restaurant", getRestaurant);
+app.put("/restaurant", updateRestaurant);
 
 app.listen("4000");
 
