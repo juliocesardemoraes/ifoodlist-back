@@ -55,7 +55,6 @@ export const updateFoodlist = async (req, res) => {
     foodlist.restList.push(restList); // Assuming restList is an array of restaurants
 
     const updatedFoodlist = await foodlist.save();
-
     res.status(200).json(updatedFoodlist);
   } catch (error) {
     res.status(500).json({ message: error.message });
